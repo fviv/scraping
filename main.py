@@ -1,4 +1,4 @@
-from code.Parser import Parser
+from code.ContentGetter import ContentGetter
 
-p = Parser("http://quotes.toscrape.com/")
-print(p.parse("1").title)
+cg = ContentGetter("http://quotes.toscrape.com/")
+print(cg.getContent("1").title)
