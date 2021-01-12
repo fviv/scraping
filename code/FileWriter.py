@@ -23,10 +23,14 @@ class FileWriter(object):
         self.mdResultsFile.write(mdString)
         self.mdResultsFile.close()
         for author in authors:
-            print(author.description)
             xlsxFile = xlsxwriter.Workbook(
                 self.resultsFolder+"\\authors\\"+author.name+".xlsx")
             worksheet = xlsxFile.add_worksheet()
             worksheet.write('A1', author.name)
             worksheet.write('A2', author.description)
             xlsxFile.close()
+        tagsString = ""
+        for tag in tags:
+            tagsString += tag+"\n"
+        self.txtTagsFile.write(tagsString)
+        self.txtTagsFile.close
