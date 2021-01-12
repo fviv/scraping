@@ -1,7 +1,6 @@
 import requests
 import lxml
 from bs4 import BeautifulSoup
-from code.Parser import parse
 
 
 class ContentGetter(object):
@@ -9,7 +8,7 @@ class ContentGetter(object):
         self.domain = domain
 
     def getContent(self, pageNumber):
-        return(BeautifulSoup(requests.get(self.domain+"/page/"+str(pageNumber)).text, 'lxml'))
+        return BeautifulSoup(requests.get(self.domain+"/page/"+str(pageNumber)).text, 'lxml')
 
     def getAuthorDesc(self, url):
-        return(BeautifulSoup(requests.get(self.domain + url).text, 'lxml'))
+        return BeautifulSoup(requests.get(self.domain + url).text, 'lxml')
