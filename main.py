@@ -1,8 +1,5 @@
-from code.ContentGetter import ContentGetter
-from code.Parser import parse
+from code.ScrapingManager import ScrapingManager
 
-
-cg = ContentGetter("http://quotes.toscrape.com/")
-bs = cg.getContent("1")
-parse(bs)
-
+sm = ScrapingManager("http://quotes.toscrape.com",
+                     "C:\\Dev\\python\\scraping\\results")
+sm.scrape()
