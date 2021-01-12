@@ -1,6 +1,7 @@
 import requests
 import lxml
 from bs4 import BeautifulSoup
+from code.Parser import parse
 
 
 class ContentGetter(object):
